@@ -1,3 +1,5 @@
-# A simple lexical parser
+# CS 382 Project(s)
 
-Based on an example found in *Concepts of Programming Languages (12 ed)* by Robert W. Sebesta
+
+### Simple Lexical Analyzer
+Based on an example found in *Concepts of Programming Languages 12E* by Robert W. Sebesta

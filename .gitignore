@@ -53,3 +53,7 @@ dkms.conf
 
 # NixOS (nerd) stuff
 .direnv/
+
+# Editors
+.vscode/
+.idea/
