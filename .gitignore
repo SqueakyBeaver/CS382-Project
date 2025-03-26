@@ -57,3 +57,5 @@ dkms.conf
 # Editors
 .vscode/
 .idea/
+
+build/
