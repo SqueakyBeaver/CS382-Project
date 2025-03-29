@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "lex.h"
+#include "parse.h"
 
 // Global variables
 int charClass;
@@ -11,14 +12,4 @@ int lexLen;
 int nextToken;
 FILE *in_fp;
 
-int main() {}
-
-int lookup(char ch) {}
-
-void addChar() {}
-
-void getChar() {}
-
-void getNonBlank() {}
-
-int lex() {}
+int main() { return 0; }
