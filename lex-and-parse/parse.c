@@ -1,25 +1,31 @@
 #include "parse.h"
 
+// Parses the EBNF rule:
+// <expr> -> <term> { (+ | -) <term> }
 void expr() {
-    printf("[expr\n\t");
+    printf("[expr\n");
 
     // Parse expression
 
     printf("]\n");
 }
 
+// Parses the EBNF rule:
+// <term> -> <factor> { (* | /) <factor> }
 void term() {
-    printf("[term\n\t");
+    printf("\t[term\n");
 
     // Parse term
 
-    printf("]\n");
+    printf("\t]\n");
 }
 
+// Parses the EBNF rule:
+// <factor> -> id | int_constant | ( <expr> )
 void factor() {
-    printf("[factor\n\t");
+    printf("\t\t[factor\n\t");
 
     // Parse factor
 
-    printf("]\n");
+    printf("\t\t]\n");
 }

@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <ctype.h>
 
+// Global variables from main.c
+extern int charClass;
+extern char lexeme[100];
+extern char nextChar;
+extern int lexLen;
+extern int nextToken;
+extern FILE *in_fp;
 
 void addChar();
 void getChar();
