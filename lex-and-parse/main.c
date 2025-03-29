@@ -1,4 +1,3 @@
-#include <ctype.h>
 #include <stdio.h>
 
 #include "lex.h"
@@ -12,4 +11,6 @@ int lexLen;
 int nextToken;
 FILE *in_fp;
 
-int main() { return 0; }
+int main() {
+  return 0;
+}

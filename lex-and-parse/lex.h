@@ -1,6 +1,6 @@
 // This header file only exists to de-clutter main.c
 #include <stdio.h>
-
+#include <ctype.h>
 
 
 void addChar();

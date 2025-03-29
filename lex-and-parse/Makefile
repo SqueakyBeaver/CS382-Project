@@ -1,12 +1,20 @@
-all: lexer test
+.PHONY: all
+all: test
 
-lexer: main.c
-	mkdir ./build
-	$(CC) -Wall main.c -o ./build/lexer.out	
+CFLAGS := -Wall
+
+BUILDDIR := $(CURDIR)/build
+
+build: main.c lex.c parse.c | $(BUILDDIR)
+	cc -Wall *.c -o $(BUILDDIR)/parser	
 
 
-test: lexer input
-	./build/lexer.out
+test: build input
+	$(BUILDDIR)/parser
 
+$(BUILDDIR):
+	mkdir -p $(BUILDDIR)
+
+.PHONY: clean
 clean:
-	rm -r ./build
+	rm -f $(BUILDDIR)/*
