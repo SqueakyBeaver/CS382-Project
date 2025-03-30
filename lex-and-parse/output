@@ -1,0 +1,23 @@
+[expr
+  [term
+    [factor
+      [id [A] ]
+    ]
+    [*]
+      [factor
+        [expr
+          [term
+            [factor
+              [id [B] ]
+            ]
+          ]
+          [+]
+            [term
+              [factor
+                [id [100] ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]

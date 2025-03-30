@@ -6,7 +6,7 @@ CFLAGS := -Wall
 BUILDDIR := $(CURDIR)/build
 
 build: main.c lex.c parse.c | $(BUILDDIR)
-	cc -Wall *.c -o $(BUILDDIR)/parser	
+	cc -Wall -std=c11 *.c -o $(BUILDDIR)/parser	
 
 
 test: build input

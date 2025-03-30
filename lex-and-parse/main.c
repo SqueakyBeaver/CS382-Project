@@ -11,11 +11,12 @@ This program will parse an input based on the following EBNF grammar:
 
 // Global variables
 int charClass;
-char lexeme[256];
+char lexeme[100];
 char nextChar;
 int lexLen;
 int nextToken;
 FILE *in_fp;
+FILE *out_fp;
 
 int main() {
     if ((in_fp = fopen("./input", "r")) == NULL) {
@@ -23,9 +24,19 @@ int main() {
         return -1;
     }
 
-    expr();
+    if ((out_fp = fopen("./output", "w+")) == NULL) {
+        printf("Error: Cannot open output file\n");
+        return -1;
+    }
+
+    getChar();
+    do {
+        lex();
+        expr();
+    } while (nextToken != EOF);
 
     fclose(in_fp);
+    fclose(out_fp);
 
     return 0;
 }
