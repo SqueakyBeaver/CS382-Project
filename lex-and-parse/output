@@ -4,20 +4,20 @@
       [id [A] ]
     ]
     [*]
-      [factor
-        [expr
-          [term
-            [factor
-              [id [B] ]
-            ]
+    [factor
+      [expr
+        [term
+          [factor
+            [id [B] ]
           ]
-          [+]
-            [term
-              [factor
-                [id [100] ]
-              ]
-            ]
+        ]
+        [+]
+        [term
+          [factor
+            [id [100] ]
           ]
         ]
       ]
     ]
+  ]
+]

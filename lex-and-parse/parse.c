@@ -20,6 +20,8 @@
     fprintf(out_fp, fmt __VA_OPT__(, ) __VA_ARGS__);
 
 // Used for knowing how many tabs to output
+// Only callers should increase this
+// Only callees should descrease this
 unsigned int layer = 0;
 
 // Parses the EBNF rule:
@@ -28,6 +30,7 @@ void expr() {
     OUTPUT("[expr\n");
 
     // Parse the first term
+    layer++;
     term();
 
     // If there's a + or -, get the next token, then parse the next term
@@ -44,13 +47,11 @@ void expr() {
 // Parses the EBNF rule:
 // <term> -> <factor> { (* | /) <factor> }
 void term() {
-    layer++;
     OUTPUT("[term\n");
 
-    // Parse the first factor
+    layer++;
     factor();
 
-    // If there's a * or /, get the next token, then parse the next factor
     while (nextToken == MULT_OP || nextToken == DIV_OP) {
         OUTPUT("[%s]\n", lexeme);
         lex();
@@ -62,9 +63,8 @@ void term() {
 }
 
 // Parses the EBNF rule:
-// <factor> -> id | int_constant | ( <expr> )
+// <factor> -> id | int_literal | ( <expr> )
 void factor() {
-    layer++;
     OUTPUT("[factor\n");
 
     if (nextToken == IDENT || nextToken == INT_LIT) {
@@ -84,8 +84,8 @@ void factor() {
                      "Factor is not a valid ID, integer literal, or "
                      "parenthesis-wrapped expression");
 
-    layer++;
     lex();
+    layer++;
     expr();
 
     if (nextToken == RIGHT_PAREN)
