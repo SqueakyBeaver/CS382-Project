@@ -1,11 +1,15 @@
 #include "parse.h"
 
+// TODO: Change the printf's to fprintf's
+
 // Parses the EBNF rule:
 // <expr> -> <term> { (+ | -) <term> }
 void expr() {
     printf("[expr\n");
 
-    // Parse expression
+    // Parse the first term
+
+    // If there's a + or -, get the next token, then parse the next term
 
     printf("]\n");
 }
@@ -15,7 +19,9 @@ void expr() {
 void term() {
     printf("\t[term\n");
 
-    // Parse term
+    // Parse the first factor
+
+    // If there's a * or /, get the next token, then parse the next factor
 
     printf("\t]\n");
 }
@@ -25,7 +31,8 @@ void term() {
 void factor() {
     printf("\t\t[factor\n\t");
 
-    // Parse factor
+    // Find out what the first token is
+    // If it's a (, then parse the expression
 
     printf("\t\t]\n");
 }

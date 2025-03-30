@@ -11,13 +11,17 @@ multiplicative operators | *, /
 */
 
 int lookup(char ch) {
+    // lookup the token for characters that aren't alphanumeric
     return nextToken;
 }
 
-void addChar() {}
+void addChar() {
+    // Add nextChar to lexeme array
+}
 
 void getChar() {
-
+    // Reassign nextChar
+    // find nextChar's character class and store that
 }
 
 void getNonBlank() {}

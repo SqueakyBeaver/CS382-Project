@@ -2,7 +2,7 @@
 
 // Global variables from main.c
 extern int charClass;
-extern char lexeme[100];
+extern char lexeme[256];
 extern char nextChar;
 extern int lexLen;
 extern int nextToken;

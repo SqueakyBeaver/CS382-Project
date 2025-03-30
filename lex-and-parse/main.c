@@ -11,7 +11,7 @@ This program will parse an input based on the following EBNF grammar:
 
 // Global variables
 int charClass;
-char lexeme[100];
+char lexeme[256];
 char nextChar;
 int lexLen;
 int nextToken;
@@ -23,7 +23,7 @@ int main() {
         return -1;
     }
 
-    // Parse here
+    expr();
 
     fclose(in_fp);
 
