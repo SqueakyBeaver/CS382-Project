@@ -13,11 +13,11 @@
 
 // Output to both stdout and the output file with the appropriate amount of
 // indentation
-#define OUTPUT(fmt, ...)                                                       \
+#define OUTPUT(...)                                                            \
     printf("%*.*s", TABS, TABS, " ");                                          \
     fprintf(out_fp, "%*.*s", TABS, TABS, " ");                                 \
-    printf(fmt __VA_OPT__(, ) __VA_ARGS__);                                    \
-    fprintf(out_fp, fmt __VA_OPT__(, ) __VA_ARGS__);
+    printf(__VA_ARGS__);                                                       \
+    fprintf(out_fp, __VA_ARGS__);
 
 // Used for knowing how many tabs to output
 // Only callers should increase this
