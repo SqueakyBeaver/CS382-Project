@@ -52,9 +52,9 @@ void addChar() {
 
 void getChar() {
     // Reassign nextChar
-    // find nextChar's character class and store that
     nextChar = getc(in_fp);
-
+    
+    // find nextChar's character class and store that
     if (nextChar == EOF) {
         charClass = EOF;
         return;
