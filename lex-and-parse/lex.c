@@ -47,7 +47,7 @@ int lookup(char ch) {
 
 void addChar() {
     // Add nextChar to lexeme array
-    if (lexLen <= 98) {
+    if (lexLen <= 254) {
         lexeme[lexLen++] = nextChar;
         lexeme[lexLen] = 0;
     }
