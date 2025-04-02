@@ -4,6 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+Parser EBNF grammar:
+<expr> -> <term> { (+ | -) <term> }
+<term> -> <factor> { (* | /) <factor> }
+<factor> -> <id> | <int> | (<expr>)
+*/
+
 // Macro magic because I want to do things my way, but variadic functions suck
 // I know macros are really bad practice, but this makes things work my way
 
@@ -63,7 +70,7 @@ void term() {
 }
 
 // Parses the EBNF rule:
-// <factor> -> id | int_literal | ( <expr> )
+// <factor> -> <id> | <int> | ( <expr> )
 void factor() {
     OUTPUT("[factor\n");
 

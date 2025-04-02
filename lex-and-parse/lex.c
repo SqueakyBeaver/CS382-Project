@@ -1,13 +1,11 @@
 #include "lex.h"
 
-/* In the first part, you will implement a simple lexcial analyzer that can
-recognize the following tokens:
-identifier               | foo (var names)
-integer literal          | 0-9
-left parenthesis         | (
-right parenthsis         | )
-additive operators       | +, -
-multiplicative operators | *, /
+/* 
+lexical analyzer grammar (EBNF)
+<id> -> <letter> { <letter> | <digit> }
+<int> -> <digit> {<digit>}
+<letter> -> a | b | ... |z | A | B | ... |Z
+<digit> -> 0 | 1 | ... | 9
 */
 
 int lookup(char ch) {

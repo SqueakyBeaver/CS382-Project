@@ -1,13 +1,18 @@
-/*
-This program will parse an input based on the following EBNF grammar:
-<expr> -> <term> { (+ | -) <term> }
-<term> -> <factor> { (* | /) <factor> }
-<factor> -> id | int_constant | (<expr>)
-*/
 #include <stdio.h>
 
 #include "lex.h"
 #include "parse.h"
+
+/*
+This program will parse an input based on the following EBNF grammar:
+<expr> -> <term> { (+ | -) <term> }
+<term> -> <factor> { (* | /) <factor> }
+<factor> -> <id> | <int> | (<expr>)
+<id> -> <letter> { <letter> | <digit> }
+<int> -> <digit> {<digit>}
+<letter> -> a | b | ... |z | A | B | ... |Z
+<digit> -> 0 | 1 | ... | 9
+*/
 
 // Global variables
 int charClass;
